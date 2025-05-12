@@ -33,6 +33,7 @@ class CountViewController: UIViewController, TapCountObserver {
             label.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
         
+      //  label.text = "пока нажатий: \(UserDefaults.standard.integer(forKey: "tapCount"))"
         
     }
     

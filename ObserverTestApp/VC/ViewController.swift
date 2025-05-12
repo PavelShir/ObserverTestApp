@@ -57,13 +57,16 @@ class ViewController: UIViewController {
     func goAhead() {
         let secondVC = CountViewController()
         observer = secondVC as? TapCountObserver
+        observer?.tapCountUpdate(tapCount)
         present(secondVC, animated: true)
+        tapCount = 0
     }
     
     @objc
     func tapCountPressed() {
         tapCount += 1
-        observer?.tapCountUpdate(tapCount)
+        
+        UserDefaults.standard.set(tapCount, forKey: "tapCount")
     }
 
 }
